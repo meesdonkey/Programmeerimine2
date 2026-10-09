@@ -1,37 +1,32 @@
-﻿using FootballPredictions.Models;
+﻿using KooliProjekt.Application.Data;
 
 Tournament tournament = new Tournament
 {
-    Id = 1,
-    Name = "Champions League"
+    Name = "UEFA Champions League 2024/25"
 };
 
 Team team1 = new Team
 {
-    Id = 1,
     Name = "Barcelona"
 };
 
 Team team2 = new Team
 {
-    Id = 2,
     Name = "Real Madrid"
 };
 
 User user = new User
 {
-    Id = 1,
-    UserName = "Joao",
-    Password = "1234"
+    UserName = "joao.silva",
+    Password = "Vahe.2024"
 };
 
 Match match = new Match
 {
-    Id = 1,
     Date = DateTime.Now,
-    TournamentId = tournament.Id,
-    Team1Id = team1.Id,
-    Team2Id = team2.Id,
+    Tournament = tournament,
+    Team1 = team1,
+    Team2 = team2,
     Team1Score = 2,
     Team2Score = 1,
     RoundId = 1
@@ -39,19 +34,17 @@ Match match = new Match
 
 Prediction prediction = new Prediction
 {
-    Id = 1,
     Team1Score = 2,
     Team2Score = 1,
-    Points = 3,
-    MatchId = match.Id,
-    UserId = user.Id
+    Points = 5,
+    Match = match,
+    User = user
 };
 
 Scoreboard scoreboard = new Scoreboard
 {
-    Id = 1,
-    TournamentId = tournament.Id,
-    UserId = user.Id,
+    Tournament = tournament,
+    User = user,
     Score = prediction.Points
 };
 

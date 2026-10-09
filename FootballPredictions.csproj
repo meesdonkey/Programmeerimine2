@@ -11,4 +11,8 @@
     <Compile Remove="KooliProjekt.*\/**/*.cs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="KooliProjekt.Application\KooliProjekt.Application.csproj" />
+  </ItemGroup>
+
 </Project>
